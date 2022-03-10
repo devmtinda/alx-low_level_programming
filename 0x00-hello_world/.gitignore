@@ -1,4 +1,5 @@
-*.c
+main.c
+cisfun
 c
 *.o
 *.s
