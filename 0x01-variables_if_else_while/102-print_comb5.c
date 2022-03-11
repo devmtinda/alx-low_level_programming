@@ -22,7 +22,7 @@ int main(void)
 			{
 				for (; d <= 57; d++)
 				{
-					if (!(a == c && b ==d))
+					if (!(a == c && b == d))
 					{
 						putchar(a);
 						putchar(b);
@@ -40,7 +40,10 @@ int main(void)
 				}
 				d = 48;
 			}
+			d = b + 1;
 		}
+		
+	
 	}
 	/* your code goes there */
 	return (0);
