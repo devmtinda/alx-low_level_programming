@@ -14,7 +14,7 @@ int main(void)
 	for (alpha = 48; alpha <= 57; alpha++)
 	{
 		putchar(alpha);
-		if (alpha ==57)
+		if (alpha == 57)
 		{
 			break;
 		}
