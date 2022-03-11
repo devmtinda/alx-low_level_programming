@@ -15,9 +15,7 @@ int main(void)
 	{
 		putchar(alpha);
 	}
-	
 	putchar('\n');
 	/* your code goes there */
-
 	return (0);
 }
