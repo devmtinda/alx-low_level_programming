@@ -42,8 +42,6 @@ int main(void)
 			}
 			d = b + 1;
 		}
-		
-	
 	}
 	/* your code goes there */
 	return (0);
