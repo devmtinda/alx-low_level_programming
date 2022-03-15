@@ -2,7 +2,7 @@
 
 /**
  * jack_bauer- entry point
- * @n : number to check
+ * 
  * Return:0 or 1 or -1
  *
  */
@@ -12,12 +12,17 @@ void jack_bauer(void)
 	int b;
 	int c;
 	int d;
+	int e = 10;
 
 	while (a < 3)
 	{
 		b = 0;
+		if (a == 2)
+		{
+			e = 4;
+		}
 
-		while (b < 4)
+		while (b < e)
 		{
 			c = 0;
 
