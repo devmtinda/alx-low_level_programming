@@ -2,20 +2,10 @@
 
 /**
  * _islower - entry point
- * return:0
+ * return:0 or 1
  *
  */
 int _islower(int c)
 {
-	int i = 97;
-
-	while (i <= 122)
-	{
-		if (c == i)
-		{
-			return (1);
-			break;
-		}
-	}
-	return (0);
+	return(c >= 97 && c <= 122);
 }
