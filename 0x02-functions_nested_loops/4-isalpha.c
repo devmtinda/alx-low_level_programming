@@ -3,7 +3,7 @@
 /**
  * _isalpha - entry point
  * @c : character to check the case
- * return:0 or 1
+ * Return:0 or 1
  *
  */
 int _isalpha(int c)
