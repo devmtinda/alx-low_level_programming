@@ -1,4 +1,4 @@
-#include "head.h"
+#include "main.h"
 /**
  * add - returns the sum of its parameters
  * @a: int type number
