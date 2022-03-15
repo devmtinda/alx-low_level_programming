@@ -14,7 +14,7 @@ int print_last_digit(int a)
 	{
 		res = -1 * (a % 10);
 	}
-	
+
 	else
 	{
 		res = a % 10;
