@@ -2,7 +2,6 @@
 
 /**
  * jack_bauer- entry point
- * 
  * Return:0 or 1 or -1
  *
  */
