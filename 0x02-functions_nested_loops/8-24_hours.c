@@ -29,7 +29,7 @@ void jack_bauer(void)
 				while (d < 10)
 				{
 					_putchar(d + '0');
-					d++
+					d++;
 				}
 				c++;
 			}
