@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _abs - entry point
- * @n : number to check
- * Return:0 or 1 or -1
+ * _abs- entry point
+ * @a : number to check
+ * Return:0
  *
  */
 int _abs(int a)
