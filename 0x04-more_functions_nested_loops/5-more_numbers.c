@@ -19,6 +19,7 @@ void more_numbers(void)
 				rem = i - 10;
 				_putchar(rem + '0');
 			}
+			_putchar(i + '0');
 			i++;
 		}
 		_putchat('\n');
