@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  * mul - entry point
- * @ a :
- * @ b :
+ * @ a : represents first number
+ * @ b : represents second number
  * Return: a * b
  */
 int mul(int a, int b)
