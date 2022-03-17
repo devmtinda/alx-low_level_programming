@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _isupper - entry point
- * @c represents the letter
+ * @c : represents the letter
  * Return:0 or 1
  */
 int _isupper(int c)
