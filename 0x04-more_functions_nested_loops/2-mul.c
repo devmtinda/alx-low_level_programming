@@ -2,8 +2,8 @@
 /**
  * mul - entry point
  * @a : represents first number
- * @b :
- * Return: a * b
+ * @b : represents second number
+ * Return:0
  */
 int mul(int a, int b)
 {
