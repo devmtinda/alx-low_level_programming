@@ -27,5 +27,5 @@ void print_number(int n)
 		j++;
 	}
 	if (i == 0)
-		_putcahr('0' + n);
+		_putchar('0' + n);
 }
