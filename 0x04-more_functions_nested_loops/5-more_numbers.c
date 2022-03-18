@@ -5,12 +5,13 @@
  */
 void more_numbers(void)
 {
-	int i = 0;
+	int i;
 	int j = 0;
 	int rem;
 
 	while (j < 10)
 	{
+		i = 0;
 		while (i < 15)
 		{
 			rem = i;
