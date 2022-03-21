@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * _strlen-entry point
+ * _strlen - entry point
  * @s: pointer to string
- * return: 0
+ * Return: i
  */
 int _strlen(char *s)
 {
