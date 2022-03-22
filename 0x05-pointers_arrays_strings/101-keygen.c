@@ -11,5 +11,5 @@ int main(void)
 
 	srand(time(0));
 	passwd = rand() - RAND_MAX / 2;
-	return 0;
+	return passwd;
 }
