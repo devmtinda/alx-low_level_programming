@@ -6,19 +6,25 @@
  */
 int _atoi(char *s)
 {
-	int len, i, new = 0;
+	int len, i, new, mult = 1, fact = 1, res = 0;
 
 	for (len = 0; s[len] != '\0'; len++)
 		;
 
 	for (i = 0; i < len; i++)
 	{
+		if (s[i] == '-')
+		{
+			mult = -1;
+		}
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			new += s[i];
-			new -= 48;
+			fact *= 10;
+			new = (s[i] - 48) * fact / 10;
+			res += new;
 		}
+		res *= mult;
 	}
-	return (new);
+	return (res);
 
 }
