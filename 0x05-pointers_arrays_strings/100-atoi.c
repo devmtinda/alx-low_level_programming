@@ -18,5 +18,6 @@ int _atoi(char *s)
 			new += s[i];
 		}
 	}
+	return (new);
 
 }
