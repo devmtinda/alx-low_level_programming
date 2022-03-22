@@ -20,7 +20,8 @@ int _atoi(char *s)
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			fact *= 10;
-			new = (s[i] - 48) * fact / 10;
+			res = res * fact / 10;
+			new = s[i] - 48;
 			res += new;
 		}
 		res *= mult;
