@@ -15,7 +15,7 @@ int _atoi(char *s)
 	{
 		if (s[i] == '-')
 		{
-			mult = -1;
+			mult *= -1;
 		}
 		if (s[i] >= '0' && s[i] <= '9')
 		{
@@ -24,8 +24,12 @@ int _atoi(char *s)
 			new = s[i] - 48;
 			res += new;
 		}
-		res *= mult;
+		if (s[i + 1] < '0' || s[i + 1] > '9')
+		{
+			break;
+		}
 	}
+	res *= mult;
 	return (res);
 
 }
