@@ -23,10 +23,11 @@ int _atoi(char *s)
 			res = res * fact / 10;
 			new = s[i] - 48;
 			res += new;
-		}
-		if (s[i + 1] < '0' || s[i + 1] > '9')
-		{
-			break;
+
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+			{
+				break;
+			}
 		}
 	}
 	res *= mult;
