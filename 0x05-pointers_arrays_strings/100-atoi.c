@@ -6,7 +6,7 @@
  */
 int _atoi(char *s)
 {
-	int len, i, new, mult = 1, fact = 1, res = 0;
+	int len, i, new, mult = 1, fact = 10, res = 0;
 
 	for (len = 0; s[len] != '\0'; len++)
 		;
@@ -19,8 +19,7 @@ int _atoi(char *s)
 		}
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			fact *= 10;
-			res = res * fact / 10;
+			res = res * fact;
 			new = s[i] - 48;
 			res += new;
 
