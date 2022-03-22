@@ -16,6 +16,7 @@ int _atoi(char *s)
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			new += s[i];
+			new -= 48;
 		}
 	}
 	return (new);
