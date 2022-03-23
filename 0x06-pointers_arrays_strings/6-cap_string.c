@@ -6,28 +6,31 @@
  */
 char *cap_string(char *str)
 {
-	int len, i;
+	int len, i, j;
 	char upper, lower;
+	char sep[] = ",\t;\n; .!?\"(){}";
 
 	for (len = 0; str[len] != '\0'; len++)
 		;
 
 	for (i = 0; i < len; i++)
 	{
-		if ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '.'))
+		for (j = 0; sep[j] != '\0'; j++)
 		{
-			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+			if (str[i] == sep[j])
 			{
-				upper = 'A';
-
-				for (lower = 'a'; lower <= 'z'; lower++)
+				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
 				{
-					if (str[i + 1] == lower)
+					upper = 'A';
+					for (lower = 'a'; lower <= 'z'; lower++)
 					{
-						str[i + 1] = upper;
-						break;
+						if (str[i + 1] == lower)
+						{
+							str[i + 1] = upper;
+							break;
+						}
+						upper++;
 					}
-					upper++;
 				}
 			}
 		}
