@@ -17,7 +17,7 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		dest[i] = src[j];
 
-		if (src[j] == src[n])
+		if (src[j] == src[n - 1])
 		{
 			break;
 		}
