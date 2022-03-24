@@ -7,21 +7,26 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int len1, len2, cmp;
+	int len, cmp, i;
 
-	for (len1 = 0; s1[len1] != '\0'; len1++)
-		;
-	for (len2 = 0; s2[len2] != '\0'; len2++)
+	for (len = 0; s1[len] != '\0'; len++)
 		;
 
-	if (len1 == len2)
-		cmp = 0;
+	for (i = 0; i <= len; i++)
+	{
+		if (s1[i] != s2[i])
+		{
+			if (s1[i] > s2[i])
+				cmp = 15;
+			else if (s1[i] < s2[i])
+				cmp = -15;
+			break;
+		}
+		else if (i == len)
+		{
+			cmp = 0;
 
-	else if (len1 > len2)
-		cmp = 15;
-
-	else if (len1 < len2)
-		cmp = -15;
-
+		}
+	}
 	return (cmp);
 }
