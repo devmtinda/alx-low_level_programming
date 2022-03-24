@@ -19,6 +19,7 @@ void to_upper(char *str, int i)
 			if (str[i + 1] == lower)
 			{
 				str[i + 1] = upper;
+				i++;
 				break;
 			}
 			upper++;
