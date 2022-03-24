@@ -7,9 +7,11 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int len, cmp, i;
+	int len, len2, cmp, i;
 
 	for (len = 0; s1[len] != '\0'; len++)
+		;
+	for (len2 = 0; s2[len2] != '\0'; len2++)
 		;
 
 	for (i = 0; i <= len; i++)
@@ -22,7 +24,7 @@ int _strcmp(char *s1, char *s2)
 				cmp = -15;
 			break;
 		}
-		else if (i == len)
+		else if (i == len && len == len2)
 		{
 			cmp = 0;
 
