@@ -24,7 +24,7 @@ int _strcmp(char *s1, char *s2)
 				cmp = -15;
 			break;
 		}
-		else if (i == len && s1[i] == s2[i])
+		else if (i == len && s1[i] == s2[i] && s1[i + 1] == s2[i + 1])
 		{
 			cmp = 0;
 
