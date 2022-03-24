@@ -10,20 +10,17 @@ void to_upper(char *str, int i)
 
 {
 	char upper, lower;
+	
+	upper = 'A';
 
-	if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+	for (lower = 'a'; lower <= 'z'; lower++)
 	{
-		upper = 'A';
-		for (lower = 'a'; lower <= 'z'; lower++)
+		if (str[i + 1] == lower)
 		{
-			if (str[i + 1] == lower)
-			{
-				str[i + 1] = upper;
-				i++;
-				break;
-			}
-			upper++;
+			str[i + 1] = upper;
+			break;
 		}
+		upper++;
 	}
 }
 /**
@@ -33,21 +30,20 @@ void to_upper(char *str, int i)
  */
 char *cap_string(char *str)
 {
-	int len, i, j;
+	int i, j;
 	char sep[] = ",\t;\n; .!?\"(){}";
 
-	for (len = 0; str[len] != '\0'; len++)
-		;
-
-	for (i = 0; i < len; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; sep[j] != '\0'; j++)
+		j = 0;
+		while (sep[j] != '\0')
 		{
 			if (str[i] == sep[j])
 			{
 				to_upper(str, i);
-
+				break;
 			}
+			j++;
 		}
 	}
 	return (str);
