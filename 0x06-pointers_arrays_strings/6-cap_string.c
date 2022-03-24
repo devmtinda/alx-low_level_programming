@@ -7,10 +7,9 @@
  * Return: char
  */
 void to_upper(char *str, int i)
-
 {
 	char upper, lower;
-	
+
 	upper = 'A';
 
 	for (lower = 'a'; lower <= 'z'; lower++)
