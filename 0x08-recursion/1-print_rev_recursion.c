@@ -19,17 +19,36 @@ void rev_recursion(char *s, int len)
 	}
 }
 /**
+ * string_length - entry point
+ * @s: pointer
+ * @len: integer
+ * Return: int
+ */
+int string_length(char *q, int len)
+{
+	char *p;
+
+	if (q[0] == '\0')
+	{
+		return (len);
+	}
+	else
+	{
+		len += 1;
+		p = &q[1];
+		return string_length(p, len);
+	}
+}
+/**
  * _print_rev_recursion - entry point
  * @s: pointer char
  * Return: void
  */
 void _print_rev_recursion(char *s)
 {
-	int len;
+	int len = 0;
 
-	for (len = 0; s[len] != '\0'; len++)
-		;
+	string_length(s, len);
 	len -= 1;
-
 	rev_recursion(s, len);
 }
