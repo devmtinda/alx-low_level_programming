@@ -12,9 +12,7 @@ void rev_recursion(char *s, int len)
 		_putchar('\n');
 	}
 	else if (s[0] == '\0')
-	{
-		_putchar('\n');
-	}
+		;
 	else
 	{
 		_putchar(s[len]);
