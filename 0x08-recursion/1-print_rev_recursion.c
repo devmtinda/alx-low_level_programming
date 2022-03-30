@@ -20,7 +20,7 @@ void rev_recursion(char *s, int len)
 }
 /**
  * string_length - entry point
- * @s: pointer
+ * @q: pointer
  * @len: integer
  * Return: int
  */
