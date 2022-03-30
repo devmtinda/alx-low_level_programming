@@ -36,7 +36,7 @@ int string_length(char *q, int len)
 	{
 		len += 1;
 		p = &q[1];
-		return string_length(p, len);
+		return (string_length(p, len));
 	}
 }
 /**
@@ -46,9 +46,9 @@ int string_length(char *q, int len)
  */
 void _print_rev_recursion(char *s)
 {
-	int len = 0;
+	int len = 0, i;
 
-	string_length(s, len);
-	len -= 1;
-	rev_recursion(s, len);
+	i = string_length(s, len);
+	i -= 1;
+	rev_recursion(s, i);
 }
