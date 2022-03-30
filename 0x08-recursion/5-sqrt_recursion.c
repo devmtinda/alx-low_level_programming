@@ -3,6 +3,7 @@
  * square - entry point
  * @n: integer
  * @val: integer
+ * Return: int
  */
 int square(int n, int val)
 {
