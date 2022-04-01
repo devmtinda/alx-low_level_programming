@@ -33,6 +33,26 @@ int string_to_int(char *str)
 	return (n);
 }
 /**
+ * print_num - prints number
+ * @min: integer
+ * Return: void
+ */
+void print_num(int min)
+{
+	int j = min, i, div;
+
+	for (i = 1; j > 9; i *= 10, j /= 10)
+		;
+
+	while (i >= 1)
+	{
+		div = min / i;
+		_putchar(div + '0');
+		min %= i;
+		i /= 10;
+	}
+}
+/**
  * main - entry point
  * @argc: argument count
  * @argv: argument vector
@@ -41,7 +61,7 @@ int string_to_int(char *str)
 int main(int argc, char *argv[])
 {
 	int num, i = 0, min = 0;
-	int change[] = {25,10,5,2,1};
+	int change[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
 	{
@@ -56,19 +76,23 @@ int main(int argc, char *argv[])
 	num = string_to_int(argv[1]);
 
 	if (num == -1)
-		return (0);
+		_putchar('0');
 
-	while (num)
+	else
 	{
-		if (num / change[i])
+		while (num)
 		{
-			num = num - change[i];
-			min++;
+			if (num / change[i])
+			{
+				num = num - change[i];
+				min++;
+			}
+			else
+				i++;
 		}
-		else
-			i++;
+		print_num(min);
 	}
-	_putchar(min + '0');
+
 	_putchar('\n');
 	return (0);
 }
