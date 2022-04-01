@@ -43,10 +43,8 @@ int string_to_int(char *str)
  */
 int main(int argc, char *argv[])
 {
-	int mult, i, j, div;
-	char *a = argv[1];
-	char *b = argv[2];
-	int c, d;
+	int mult, i, j, div, c, d;
+	char *a = argv[1], *b = argv[2];
 
 	if (argc != 3)
 	{
