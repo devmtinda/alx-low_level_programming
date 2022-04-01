@@ -59,7 +59,7 @@ int sum_positive(int *p, int i)
 int main(int argc, char *argv[])
 {
 	int count = 1, i = 0, add, div, j;
-	int p[10];
+	int p[100];
 
 	while (count < argc)
 	{
