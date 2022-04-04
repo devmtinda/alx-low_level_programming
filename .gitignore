@@ -1,3 +1,4 @@
 *.out
 template.c
 _putchar.c
+*.o
