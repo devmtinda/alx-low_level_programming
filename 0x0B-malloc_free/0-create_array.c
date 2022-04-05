@@ -4,6 +4,7 @@
  * create_array - creates array of characters
  * @size: size of allocated memory
  * @c: character
+ * Return: p
  */
 char *create_array(unsigned int size, char c)
 {
