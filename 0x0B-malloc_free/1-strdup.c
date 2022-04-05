@@ -23,7 +23,7 @@ char *_strdup(char *str)
 
 	i = 0;
 
-	while (i < len)
+	while (i <= len)
 	{
 		p[i] = str[i];
 		i++;
