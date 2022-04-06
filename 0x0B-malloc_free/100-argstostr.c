@@ -7,14 +7,11 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, k, len, size = 0;
+	int i = 0, j, k = 0, len, size = 0;
 	char *p;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-
-	i = 0;
-
 	while (i < ac)
 	{
 		for (len = 0; av[i][len] != '\0'; len++)
@@ -30,8 +27,6 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	i = 0;
-	k = 0;
-
 	while (i < ac)
 	{
 		for (len = 0; av[i][len] != '\0'; len++)
@@ -51,6 +46,5 @@ char *argstostr(int ac, char **av)
 		i++;
 	}
 	p[k + 1] = '\0';
-
 	return (p);
 }
