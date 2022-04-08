@@ -4,6 +4,7 @@
  * @mem: memory size
  * @s1: string one
  * @s2: string two
+ * @len1: length of s1
  * Return: pointer
  */
 char *addtomem(unsigned int mem, char *s1, char *s2, unsigned int len1)
