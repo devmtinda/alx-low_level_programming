@@ -6,10 +6,11 @@
  * @q: int
  * Return: int
  */
-int stringtoint(char *argv[], int q)
+int *stringtoint(char *argv[], int q)
 {
 	char *str = argv[q];
 	int i, j, n = 0, len, fact = 1;
+	int *number;
 	char *num = "0123456789";
 
 	for (len = 0; str[len] != '\0'; len++)
@@ -35,7 +36,8 @@ int stringtoint(char *argv[], int q)
 			j++;
 		}
 	}
-	return (n);
+	number = malloc(sizeof(n));
+	return (number);
 }
 /**
  * main - entry point
@@ -45,7 +47,8 @@ int stringtoint(char *argv[], int q)
  */
 int main(int argc, char *argv[])
 {
-	int i, j, num1, num2, mul;
+	int i, j;
+	int *num1, *num2, *mul;
 
 	if (argc != 3)
 	{
@@ -70,8 +73,9 @@ int main(int argc, char *argv[])
 	num1 = stringtoint(argv, 1);
 	num2 = stringtoint(argv, 2);
 
-	mul = num1 * num2;
-	printf("%d\n", mul);
+	mul = malloc(sizeof(*num1 * *num2));
+	*mul = *num1 * *num2;
+	printf("%d\n", *mul);
 
 	return (0);
 }
