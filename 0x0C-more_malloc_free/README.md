@@ -1,1 +1,1 @@
-More programs using the malloc() function
+More tasks with programs that use the malloc() function
