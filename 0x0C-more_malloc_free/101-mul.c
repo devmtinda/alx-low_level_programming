@@ -38,7 +38,7 @@ int stringtoint(char *argv[], int q)
 	return (n);
 }
 /**
- * main: entry point
+ * main - entry point
  * @argc: argument count
  * @argv: argument vector
  * Return: Always 0
