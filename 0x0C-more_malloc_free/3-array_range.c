@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * array_range - creates an array of integers
  * @min: integer
@@ -14,7 +13,7 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	mem = max - min + 1;
+	mem = max - min + ;
 	p = malloc(sizeof(*p) * mem);
 
 	if (p == NULL)
