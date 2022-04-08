@@ -37,6 +37,7 @@ int *stringtoint(char *argv[], int q)
 		}
 	}
 	number = malloc(sizeof(n));
+	*number = n;
 	return (number);
 }
 /**
@@ -73,7 +74,7 @@ int main(int argc, char *argv[])
 	num1 = stringtoint(argv, 1);
 	num2 = stringtoint(argv, 2);
 
-	mul = malloc(sizeof(*num1 * *num2));
+	mul = malloc(sizeof(num1[0] * num2[0]));
 	*mul = *num1 * *num2;
 	printf("%d\n", *mul);
 
