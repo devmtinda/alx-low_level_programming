@@ -49,7 +49,7 @@ int *stringtoint(char *argv[], int q)
 int main(int argc, char *argv[])
 {
 	int i, j;
-	int *num1, *num2, *mul;
+	long long int *num1, *num2, *mul;
 
 	if (argc != 3)
 	{
