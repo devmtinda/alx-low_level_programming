@@ -49,7 +49,7 @@ int *stringtoint(char *argv[], int q)
 int main(int argc, char *argv[])
 {
 	int i, j;
-	long long int *num1, *num2, *mul;
+	int *num1, *num2, *mul;
 
 	if (argc != 3)
 	{
@@ -77,6 +77,9 @@ int main(int argc, char *argv[])
 	mul = malloc(sizeof(num1[0] * num2[0]));
 	*mul = *num1 * *num2;
 	printf("%d\n", *mul);
+	free(mul);
+	free(num1);
+	free(num2);
 
 	return (0);
 }
