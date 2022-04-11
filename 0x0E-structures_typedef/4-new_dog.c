@@ -28,15 +28,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	i = 0;
-	while (i < len1)
+	while (i <= len1)
 	{
 		p1[i] = name[i];
 		i++;
 	}
 	i = 0;
-	while (i < len2)
+	while (i <= len2)
 	{
-		p2[i] = name[i];
+		p2[i] = owner[i];
 		i++;
 	}
 
