@@ -8,14 +8,17 @@
  */
 void print_dog(struct dog *d)
 {
-	char *nname = d->name;
-	float aage = d->age;
-	char *oowner = d->owner;
+	char *nname, *oowner;
+	float aage;
 
 	if (d == NULL)
 		exit(0);
 	else
 	{
+		nname = d->name;
+		aage = d->age;
+		oowner = d->owner;
+
 		if (nname == NULL)
 			nname = "(nil)";
 		if (oowner == NULL)
