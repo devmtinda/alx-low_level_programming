@@ -13,7 +13,7 @@ void print_dog(struct dog *d)
 	char *oowner = d->owner;
 
 	if (d == NULL)
-		exit(1);
+		exit(0);
 	else
 	{
 		if (nname == NULL)
