@@ -12,7 +12,7 @@ void print_dog(struct dog *d)
 	float aage;
 
 	if (d == NULL)
-		exit(0);
+		;
 	else
 	{
 		nname = d->name;
