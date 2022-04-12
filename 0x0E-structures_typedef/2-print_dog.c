@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * print_dog - prints struct dog
  * @d: structure
@@ -12,7 +13,7 @@ void print_dog(struct dog *d)
 	char *oowner = d->owner;
 
 	if (d == NULL)
-		;
+		exit(1);
 	else
 	{
 		if (nname == NULL)
