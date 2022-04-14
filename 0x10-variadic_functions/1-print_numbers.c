@@ -13,10 +13,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i, j;
 
 	if (n == 0)
-		exit(0);
+		return;
 
 	if (separator == NULL)
-		exit(0);
+		return;
 
 	va_start(ap, n);
 
