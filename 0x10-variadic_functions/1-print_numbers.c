@@ -12,27 +12,26 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i, j;
 
 	if (separator == NULL)
-		return;
 
-	va_start(ap, n);
-
-	for (i = 0; i < n; i++)
+	else
 	{
-		printf("%i", va_arg(ap, int));
-
-
-		if (i == n - 1)
+		va_start(ap, n);
+	
+		for (i = 0; i < n; i++)
 		{
-			printf("\n");
-			break;
+			printf("%i", va_arg(ap, int));
+			if (i == n - 1)
+			{
+				printf("\n");
+				break;
+			}
+			j = 0;
+			while (separator[j] != '\0')
+			{
+				printf("%c", separator[j]);
+				j++;
+			}
 		}
-		j = 0;
-
-		while (separator[j] != '\0')
-		{
-			printf("%c", separator[j]);
-			j++;
-		}
+		va_end(ap);
 	}
-	va_end(ap);
 }
