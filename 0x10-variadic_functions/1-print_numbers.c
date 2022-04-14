@@ -1,5 +1,4 @@
 #include <stdarg.h>
-#include <stdlib.h>
 #include <stdio.h>
 /**
  * print_numbers - prints numbers
@@ -11,9 +10,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
 	unsigned int i, j;
-
-	if (n == 0)
-		return;
 
 	if (separator == NULL)
 		return;
