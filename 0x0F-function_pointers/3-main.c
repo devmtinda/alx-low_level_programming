@@ -27,12 +27,6 @@ int main(int argc, char *argv[])
 	if (len != 1)
 		exit(0);
 
-	if (get_op_func(op) == NULL)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
 	if (*op != '+' && *op != '-' && *op != '*' && *op != '/' && *op != '%')
 	{
 		printf("Error\n");
