@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * print_numbers - prints numbers
  * @separator: string to be printed
