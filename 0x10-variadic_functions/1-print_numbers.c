@@ -29,7 +29,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 				printf("\n");
 				break;
 			}
-			printf("%s", separator);
+			if (separator == NULL)
+				;
+			else
+				printf("%s", separator);
 		}
 		va_end(ap);
 	}
