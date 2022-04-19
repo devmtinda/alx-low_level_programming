@@ -24,7 +24,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("\n");
 			exit(0);
 		}
-		printf("%s", separator);
+		if (separator == NULL);
+		else
+			printf("%s", separator);
 	}
 	va_end(ap);
 }
