@@ -11,5 +11,6 @@ void print_all(const char * const format, ...);
 typedef struct format
 {
 char *operate;
+void f(void p);
 } form;
 #endif
