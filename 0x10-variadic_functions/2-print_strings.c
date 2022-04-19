@@ -24,7 +24,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("\n");
 			exit(0);
 		}
-		if (separator == NULL);
+		if (separator == NULL)
+			;
 		else
 			printf("%s", separator);
 	}
