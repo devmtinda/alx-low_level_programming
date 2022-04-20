@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "variadic_functions.h"
-#include <string.h>
+#include <stdlib.h>
 #include <stdarg.h>
 /**
  * print_all - prints anything
@@ -40,7 +40,10 @@ void print_all(const char * const format, ...)
 						break;
 					case 's':
 						p = va_arg(ap, char*);
-						printf("%s", p);
+						if (p == NULL)
+							exit(0);
+						else
+							printf("%s", p);
 						break;
 					default:
 						break;
