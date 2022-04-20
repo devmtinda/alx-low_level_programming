@@ -3,50 +3,56 @@
 #include <string.h>
 #include <stdarg.h>
 /**
- * print_string - prints string
- * @p: string
- */
-void print_string(char *p)
-{
-	printf("%s, ", p);
-}
-/**
  * print_all - prints anything
  * @format: constant pointer
  * Return: void
  */
 void print_all(const char * const format, ...)
 {
-	int i, j;
-	unsigned int count;
+	int i, j, integ;
 	va_list ap;
-	char *p;
-	form new[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"f", print_float},
-		{"s", print_string}
-	};
-
-	count = strlen(format);
-	va_start(ap, format);
+	char *p, *ref = "cifs";
+	char charc;
+	float f;
 
 	i = 0;
-	while (i < count - 1)
+	va_start(ap, format);
+	while (format[i] != '\0')
 	{
-		p = va_arg(ap, char*);
 		j = 0;
-		while (format[i] != '\0')
+		while (ref[j] != '\0')
 		{
-			if (format[i] == new[j].operate[0])
+			if (format[i] == ref[j])
 			{
-				new[i].f(p);
+				switch (ref[j])
+				{
+					case 'c':
+						charc = va_arg(ap, int);
+						printf("%c", charc);
+						break;
+					case 'i':
+						integ = va_arg(ap, int);
+						printf("%d", integ);
+						break;
+					case 'f':
+						f = va_arg(ap, double);
+						printf("%f", f);
+						break;
+					case 's':
+						p = va_arg(ap, char*);
+						printf("%s", p);
+						break;
+					default:
+						break;
+				}
+				if (format[i + 1] != '\0')
+					printf(", ");
 				break;
 			}
 			j++;
 		}
 		i++;
 	}
+	printf("\n");
 	va_end(ap);
-
 }
