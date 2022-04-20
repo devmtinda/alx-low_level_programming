@@ -40,10 +40,7 @@ void print_all(const char * const format, ...)
 						break;
 					case 's':
 						p = va_arg(ap, char*);
-						if (p == NULL)
-							exit(0);
-						else
-							printf("%s", p);
+						printf("%s", p);
 						break;
 					default:
 						break;
