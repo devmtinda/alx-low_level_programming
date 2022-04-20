@@ -39,7 +39,7 @@ void print_all(const char * const format, ...)
 						printf("%f", f);
 						break;
 					case 's':
-						p = va_arg(ap, char*)
+						p = va_arg(ap, char*);
 						printf("%s", p);
 						break;
 					default:
