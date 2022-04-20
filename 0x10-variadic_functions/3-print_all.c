@@ -5,18 +5,18 @@
 /**
  * switch_statement - entry point
  * @j: integer
- * @ref: reference string
+ * @format: reference string
  * @ap: argument pointer
  * Return: void
  */
-void switch_statement(int j, char *ref, va_list ap)
+void switch_statement(int i, const char * const format, va_list ap)
 {
 	char charc;
 	int integ;
 	float f;
 	char *p;
 
-	switch (ref[j])
+	switch (format[i])
 	{
 		case 'c':
 			charc = va_arg(ap, int);
@@ -47,31 +47,26 @@ void switch_statement(int j, char *ref, va_list ap)
  */
 void print_all(const char * const format, ...)
 {
-	int i, j;
+	int i;
 	va_list ap;
-	char *ref = "cifs";
 
 	i = 0;
+	if (format == NULL)
+	{
+		printf("\n");
+		exit(0);
+	}
 	va_start(ap, format);
 	while (format[i] != '\0')
 	{
-		j = 0;
-		while (ref[j] != '\0')
+		switch_statement(i, format, ap);
+		switch (format[i + 1])
 		{
-			if (format[i] == ref[j])
-			{
-				switch_statement(j, ref, ap);
-				switch (format[i + 1])
-				{
-					case '\0':
-						break;
-					default:
-						printf(", ");
-						break;
-				}
+			case '\0':
 				break;
-			}
-			j++;
+			default:
+				printf(", ");
+				break;
 		}
 		i++;
 	}
