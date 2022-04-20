@@ -3,17 +3,53 @@
 #include <stdlib.h>
 #include <stdarg.h>
 /**
+ * switch_statement - entry point
+ * @j: integer
+ * @ref: reference string
+ * @ap: argument pointer
+ * Return: void
+ */
+void switch_statement(int j, char *ref, va_list ap)
+{
+	char charc;
+	int integ;
+	float f;
+	char *p;
+
+	switch (ref[j])
+	{
+		case 'c':
+			charc = va_arg(ap, int);
+			printf("%c", charc);
+			break;
+		case 'i':
+			integ = va_arg(ap, int);
+			printf("%d", integ);
+			break;
+		case 'f':
+			f = va_arg(ap, double);
+			printf("%f", f);
+			break;
+		case 's':
+			p = va_arg(ap, char*);
+			if (p == NULL)
+				p = "(nil)";
+			printf("%s", p);
+			break;
+		default:
+			break;
+	}
+}
+/**
  * print_all - prints anything
  * @format: constant pointer
  * Return: void
  */
 void print_all(const char * const format, ...)
 {
-	int i, j, integ;
+	int i, j;
 	va_list ap;
-	char *p, *ref = "cifs";
-	char charc;
-	float f;
+	char *ref = "cifs";
 
 	i = 0;
 	va_start(ap, format);
@@ -24,29 +60,15 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == ref[j])
 			{
-				switch (ref[j])
+				switch_statement(j, ref, ap);
+				switch (format[i + 1])
 				{
-					case 'c':
-						charc = va_arg(ap, int);
-						printf("%c", charc);
-						break;
-					case 'i':
-						integ = va_arg(ap, int);
-						printf("%d", integ);
-						break;
-					case 'f':
-						f = va_arg(ap, double);
-						printf("%f", f);
-						break;
-					case 's':
-						p = va_arg(ap, char*);
-						printf("%s", p);
+					case '\0':
 						break;
 					default:
+						printf(", ");
 						break;
 				}
-				if (format[i + 1] != '\0')
-					printf(", ");
 				break;
 			}
 			j++;
