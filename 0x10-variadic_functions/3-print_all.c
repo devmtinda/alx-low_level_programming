@@ -4,7 +4,7 @@
 #include <stdarg.h>
 /**
  * switch_statement - entry point
- * @j: integer
+ * @i: integer
  * @format: reference string
  * @ap: argument pointer
  * Return: void
