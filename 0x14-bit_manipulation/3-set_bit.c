@@ -25,6 +25,8 @@ int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int i = 0, sum = 0, num;
 
+	if (n == NULL)
+		return (-1);
 	while (1)
 	{
 		if (index == i)
