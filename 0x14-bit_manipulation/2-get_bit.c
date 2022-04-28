@@ -23,7 +23,6 @@ int get_bit(unsigned long int n, unsigned int index)
 		n = n >> 1;
 		i++;
 	}
-	if (n == 0 && index != 0)
-		return (-1);
+
 	return (num);
 }
