@@ -10,9 +10,6 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int i = 0, num;
 
-	if (n > INT_MAX)
-		return (-1);
-
 	while (n)
 	{
 		if (i == index)
