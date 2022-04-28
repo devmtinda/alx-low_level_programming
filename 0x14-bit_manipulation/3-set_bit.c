@@ -39,5 +39,5 @@ int set_bit(unsigned long int *n, unsigned int index)
 			break;
 	}
 	*n = sum;
-	return (*n);
+	return (1);
 }
