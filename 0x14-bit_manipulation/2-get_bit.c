@@ -9,20 +9,20 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int i = 0, num;
 
+	if ((n == 0 || n == 1) && index == 0)
+		return (0);
+
 	while (n)
 	{
 		if (i == index)
 		{
 			num = n - 2 * (n >> 1);
-			break;
-		}
-		if (n == 1)
-		{
-			return (-1);
+			return (num);
 		}
 		n = n >> 1;
 		i++;
 	}
 
-	return (num);
+
+	return (-1);
 }
