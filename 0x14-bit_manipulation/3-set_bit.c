@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * power - returns power
  * @i: integer
@@ -26,7 +27,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 	unsigned int i = 0, sum = 0, num;
 
 	if (n == NULL)
-		return (-1);
+		exit(0);
 	while (1)
 	{
 		if (index == i)
