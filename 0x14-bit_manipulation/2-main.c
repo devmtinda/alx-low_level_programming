@@ -10,7 +10,7 @@ int main(void)
 {
     int n;
 
-    n = get_bit(0, 1);
+    n = get_bit(0, 0);
     printf("%d\n", n);
     n = get_bit(1, 0);
     printf("%d\n", n);
