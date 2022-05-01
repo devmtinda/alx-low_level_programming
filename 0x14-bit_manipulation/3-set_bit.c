@@ -37,7 +37,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 		sum = sum + (num * power(i));
 		*n = *n >> 1;
 		i++;
-		if (*n == 0 && i > index)
+		if (*n == 0)
 		{
 			*n = sum;
 			break;
