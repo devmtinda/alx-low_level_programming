@@ -40,8 +40,8 @@ int set_bit(unsigned long int *n, unsigned int index)
 		if (*n == 0 && i > index)
 		{
 			*n = sum;
-			return (1);
+			break;
 		}
 	}
-	return (-1);
+	return (1);
 }
