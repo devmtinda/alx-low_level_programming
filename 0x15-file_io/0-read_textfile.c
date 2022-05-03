@@ -24,8 +24,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	buf[max] = '\0';
-	
+
 	dprintf(STDOUT_FILENO, "%s", buf);
+
+	min = write(fd, buf, max);
+	if (min == -1)
+		return (0);
 
 	close(fd);
 	return (max);
