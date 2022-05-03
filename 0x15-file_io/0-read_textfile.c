@@ -18,17 +18,26 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDWR);
 
 	if (fd == -1)
+	{
+		free(buf);
 		return (0);
+	}
 
 	max = read(fd, buf, letters);
 	if (max == -1)
+	{
+		free(buf);
 		return (0);
+	}
 
 	buf[max] = '\0';
 
 	min = write(1, buf, max);
 	if (min != max)
+	{
+		free(buf);
 		return (0);
+	}
 
 	free(buf);
 	close(fd);
