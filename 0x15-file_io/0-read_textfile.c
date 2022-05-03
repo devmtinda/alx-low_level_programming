@@ -28,7 +28,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	dprintf(STDOUT_FILENO, "%s", buf);
 
 	min = write(1, buf, max);
-	if (min != max)
+	if (min == -1)
 		return (0);
 
 	close(fd);
