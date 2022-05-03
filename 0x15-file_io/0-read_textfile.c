@@ -20,6 +20,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	max = read(fd, buf, letters);
+	if (max == -1)
+		return (0);
+
 	buf[max] = '\0';
 	printf("%s", buf);
 
