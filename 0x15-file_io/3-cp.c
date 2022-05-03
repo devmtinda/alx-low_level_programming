@@ -37,8 +37,8 @@ void cp_file(char *file1, char *file2)
 	fd2 = open(file2, O_WRONLY | O_TRUNC | O_CREAT, 00664);
 	if (fd2 == -1)
 		print_error2(file2);
-	buf = malloc(sizeof(char) * 102400);
-	m = read(fd1, buf, 102400);
+	buf = malloc(sizeof(char) * 10240);
+	m = read(fd1, buf, 10240);
 	buf[m] = '\0';
 	if (m == -1)
 		print_error1(file1);
