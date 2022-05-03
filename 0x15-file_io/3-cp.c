@@ -47,6 +47,7 @@ void cp_file(char *file1, char *file2)
 	{
 		dprintf(STDOUT_FILENO, "Error: Can't close fd %d", fd2);
 	}
+	free(buf);
 }
 /**
  * main - entry point
