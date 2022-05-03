@@ -21,7 +21,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	max = read(fd, buf, letters);
 	buf[max] = '\0';
-	printf("%s\n", buf);
+	dprintf(STDOUT_FILENO, "%s", buf);
 
 	close(fd);
 	return (max);
