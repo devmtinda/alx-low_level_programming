@@ -1,5 +1,4 @@
 #include "main.h"
-#include <limits.h>
 /**
  * get_bit - returns value of a bit
  * @n: number to be converted to binary
@@ -10,6 +9,8 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int i = 0, num;
 
+	if (index >= 31)
+		return (-1);
 	while (n)
 	{
 		if (i == index)
@@ -22,5 +23,5 @@ int get_bit(unsigned long int n, unsigned int index)
 	}
 
 
-	return (-1);
+	return (0);
 }

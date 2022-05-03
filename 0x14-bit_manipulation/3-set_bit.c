@@ -25,7 +25,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int i = 0, sum = 0, num;
 
-	if (n == NULL)
+	if (index >= 31)
 		return (-1);
 	while (1)
 	{
@@ -40,8 +40,8 @@ int set_bit(unsigned long int *n, unsigned int index)
 		if (*n == 0 && i > index)
 		{
 			*n = sum;
-			return (1);
+			break;
 		}
 	}
-	return (-1);
+	return (1);
 }
