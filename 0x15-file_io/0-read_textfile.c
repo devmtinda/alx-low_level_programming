@@ -8,12 +8,13 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	char buf[1024];
+	char *buf;
 	ssize_t max, min;
 
 	if (filename == NULL)
 		return (0);
 
+	buf = malloc(sizeof(char) * letters);
 	fd = open(filename, O_RDWR);
 
 	if (fd == -1)
@@ -25,12 +26,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	buf[max] = '\0';
 
-	dprintf(STDOUT_FILENO, "%s", buf);
-
 	min = write(1, buf, max);
 	if (min == -1)
 		return (0);
 
+	free(buf);
 	close(fd);
 	return (max);
 
