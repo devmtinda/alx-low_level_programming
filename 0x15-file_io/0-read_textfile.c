@@ -14,7 +14,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	fd = open(filename, O_RDONLY);
+	fd = open(filename, O_RDWR);
 
 	if (fd == -1)
 		return (0);
@@ -24,7 +24,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	buf[max] = '\0';
-	printf("%s", buf);
+	dprintf(STDOUT_FILENO, "%s", buf);
 
 	close(fd);
 	return (max);
