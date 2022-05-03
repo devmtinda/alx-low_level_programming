@@ -66,9 +66,10 @@ int main(int ac, char *av[])
 {
 	if (ac != 3)
 	{
-		dprintf(1, "Usage: %s file_from file_to", av[0]);
+		dprintf(1, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	cp_file(av[1], av[2]);
+	if (av[1] != NULL && av[2] != NULL)
+		cp_file(av[1], av[2]);
 	return (0);
 }
