@@ -7,7 +7,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, cl;
+	int fd;
 	char buf[1024];
 	ssize_t max, min;
 
@@ -27,13 +27,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	dprintf(STDOUT_FILENO, "%s", buf);
 
-	min = write(fd, buf, max);
+	min = write(1, buf, max);
 	if (min != max)
 		return (0);
 
-	cl = close(fd);
-	if (cl == -1)
-		return (0);
+	close(fd);
 	return (max);
 
 }
