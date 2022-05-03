@@ -23,21 +23,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	max = read(fd, buf, letters);
-	if (max == -1)
+	if (letters > 0)
 	{
-		free(buf);
-		return (0);
-	}
+		max = read(fd, buf, letters);
+		if (max == -1)
+			return (0);
+		buf[max] = '\0';
 
-	buf[max] = '\0';
-
-	min = write(1, buf, max);
-	if (min != max)
-	{
-		free(buf);
-		return (0);
+		min = write(1, buf, max);
+		if (min != max)
+			return (0);
 	}
+	else
+		max = 0;
 
 	free(buf);
 	close(fd);
