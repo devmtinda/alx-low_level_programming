@@ -10,6 +10,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fd;
 	char *buf;
 	ssize_t max;
+	ssize_t let = 0;
 
 	if (filename == NULL)
 		return (0);
@@ -27,7 +28,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (max == -1)
 		return (0);
 	buf[max] = '\0';
-	if (letters > max)
+	while (letters)
+	{
+		let++;
+		letters--;
+	}
+	printf("%ld\n", let);
+	if (let > max)
 		write(2, buf, max);
 	else
 		write(1, buf, max);
