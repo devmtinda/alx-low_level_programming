@@ -29,8 +29,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buf[max] = '\0';
 
 	min = write(1, buf, max);
-	if (min != max)
-		return (0);
 
 	free(buf);
 	close(fd);
