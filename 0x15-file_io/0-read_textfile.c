@@ -27,8 +27,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (max == -1)
 		return (0);
 	buf[max] = '\0';
-
-	min = write(1, buf, max);
+	if (letters > max)
+		write(2, buf, max);
+	else
+		write(1, buf, max);
 
 	free(buf);
 	close(fd);
