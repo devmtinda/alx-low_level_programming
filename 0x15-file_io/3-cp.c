@@ -6,7 +6,7 @@
  */
 void print_error2(char *file2)
 {
-	dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", file2);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file2);
 	exit(99);
 }
 /**
@@ -16,7 +16,7 @@ void print_error2(char *file2)
  */
 void print_error1(char *file1)
 {
-	dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", file1);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file1);
 	exit(98);
 }
 /**
@@ -49,11 +49,13 @@ void cp_file(char *file1, char *file2)
 	q = close(fd2);
 	if (p == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't close fd %d", fd1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd1);
+		exit(100);
 	}
 	else if (q == -1)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't close fd %d", fd2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd2);
+		exit(100);
 	}
 	free(buf);
 }
@@ -67,7 +69,7 @@ int main(int ac, char *av[])
 {
 	if (ac != 3)
 	{
-		dprintf(1, "Usage: cp file_from file_to\n");
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	cp_file(av[1], av[2]);
