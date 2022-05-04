@@ -27,7 +27,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (max == -1)
 		return (0);
 	buf[max] = '\0';
-	printf("%ld\n", let);
 	if (letters == 2000)
 		write(2, buf, max);
 	else
