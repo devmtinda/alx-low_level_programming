@@ -41,17 +41,26 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			return (0);
 		new->next = NULL;
 		ht->array[index] = new;
+
+		return (1);
 	}
 
-	else
+	hold = ht->array[index];
+	while (hold)
 	{
-		new = create_node(key, value);
-		if (new == NULL)
-			return (0);
-		hold = ht->array[index];
-		ht->array[index] = new;
-		new->next = hold;
+		if (!strcmp(key, hold->key))
+		{
+			hold->value = strdup(value);
+			return (1);
+		}
+		hold = hold->next;
 	}
+	hold = ht->array[index];
+	new = create_node(key, value);
+	if (new == NULL)
+		return (0);
+	ht->array[index] = new;
+	new->next = hold;
 
 	return (1);
 
