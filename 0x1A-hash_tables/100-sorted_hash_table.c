@@ -123,6 +123,8 @@ void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *ptr;
 
+	if (ht)
+	{
 	ptr = ht->stail;
 	putchar('{');
 	while (ptr)
@@ -133,6 +135,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 		ptr = ptr->sprev;
 	}
 	printf("}\n");
+	}
 }
 /**
  * shash_table_print - prints sorted list
@@ -143,6 +146,8 @@ void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *ptr;
 
+	if (ht)
+	{
 	ptr = ht->shead;
 	putchar('{');
 	while (ptr)
@@ -154,6 +159,7 @@ void shash_table_print(const shash_table_t *ht)
 	}
 	putchar('}');
 	putchar('\n');
+	}
 }
 /**
  * shash_table_set - sets key/value in hash table
