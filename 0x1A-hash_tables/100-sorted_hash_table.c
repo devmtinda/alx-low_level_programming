@@ -214,8 +214,9 @@ void shash_table_delete(shash_table_t *ht)
 {
 	shash_node_t *ptr, *hld;
 
+	if (ht)
+	{
 	ptr = ht->shead;
-
 	while (ptr)
 	{
 		hld = ptr;
@@ -226,4 +227,5 @@ void shash_table_delete(shash_table_t *ht)
 	}
 	free(ht->array);
 	free(ht);
+	}
 }
