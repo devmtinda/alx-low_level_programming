@@ -20,6 +20,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 		return (NULL);
 	}
 	ht->shead = NULL;
+	ht->stail = NULL;
 
 	return (ht);
 }
@@ -78,7 +79,7 @@ shash_node_t *create_node(const char *key, const char *value)
 int insert_sorted(shash_node_t *new, shash_table_t *ht)
 {
 	shash_node_t *ptr, *hld = NULL;
-	int result, count = 0;
+	int result;
 
 	if (!ht->shead)
 	{
@@ -98,7 +99,7 @@ int insert_sorted(shash_node_t *new, shash_table_t *ht)
 			new->sprev = hld;
 			new->snext = ptr;
 			ptr->sprev = new;
-			if (count)
+			if (hld)
 				hld->snext = new;
 			else
 				ht->shead = new;
@@ -106,7 +107,6 @@ int insert_sorted(shash_node_t *new, shash_table_t *ht)
 		}
 		hld = ptr;
 		ptr = ptr->snext;
-		count++;
 	}
 	hld->snext = new;
 	new->sprev = hld;
