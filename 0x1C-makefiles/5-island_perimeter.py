@@ -9,7 +9,7 @@ def island_perimeter(grid):
     This function returns perimeter of grid
     """
     per = 0
-    if not isinstance(grid, list) and isinstance(grid, list):
+    if not isinstance(grid, list) and isinstance(grid[0], list):
         return
 
     for i in range(len(grid)):
