@@ -9,30 +9,28 @@ def island_perimeter(grid):
     This function returns perimeter of grid
     """
     per = 0
-    if not grid:
-        return 0
 
     for i in range(len(grid)):
         for p in range(len(grid[i])):
             if grid[i][p] == 1:
                 per += 4
                 try:
-                    if grid[i - 1][p]:
+                    if grid[i - 1][p] == 1:
                         per -= 1
                 except Exception:
                     per += 0
                 try:
-                    if grid[i][p - 1]:
+                    if grid[i][p - 1] == 1:
                         per -= 1
                 except Exception:
                     per += 0
                 try:
-                    if grid[i][p + 1]:
+                    if grid[i][p + 1] == 1:
                         per -= 1
                 except Exception:
                     per += 0
                 try:
-                    if grid[i + 1][p]:
+                    if grid[i + 1][p] == 1:
                         per -= 1
                 except Exception:
                     per += 0
