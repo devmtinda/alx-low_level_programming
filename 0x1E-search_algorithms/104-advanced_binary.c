@@ -31,7 +31,7 @@ int recurse_array(int *array, int left, int right, int value)
 	int mid;
 
 	print_array(array, left, right);
-	mid = (left + right) / 2;
+	mid = left + (right - left) / 2;
 
 	if (array[mid] == value)
 	{
