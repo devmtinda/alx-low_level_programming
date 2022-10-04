@@ -31,21 +31,16 @@ int recurse_array(int *array, int left, int right, int value)
 	int mid;
 
 	print_array(array, left, right);
-	mid = left + (right - left) / 2;
+	mid = (right + left) / 2;
 
-	if (array[mid] == value)
-	{
-		if (array[mid - 1] == value)
-			mid++;
-		else
+	if (array[mid] == value && (mid == left || array[mid - 1] != value))
 			return (mid);
-	}
 	if (left == right)
 		return (-1);
 	if (value > array[mid])
 		return (recurse_array(array, mid + 1, right, value));
 	else
-		return (recurse_array(array, left, mid - 1, value));
+		return (recurse_array(array, left, mid, value));
 }
 
 /**
