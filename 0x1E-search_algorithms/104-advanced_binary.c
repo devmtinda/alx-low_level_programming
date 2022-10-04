@@ -33,8 +33,8 @@ int recurse_array(int *array, int left, int right, int value)
 	print_array(array, left, right);
 	mid = (right + left) / 2;
 
-	if (array[mid] == value && (mid == left || array[mid - 1] != value))
-			return (mid);
+	if (array[mid] == value && array[mid - 1] != value)
+		return (mid);
 	if (left == right)
 		return (-1);
 	if (value > array[mid])
