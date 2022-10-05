@@ -28,7 +28,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 			if (ptr->n >= value || i == size - 1)
 			{
 				printf("Value found between indexes [%ld] and [%ld]\n",
-						i == size - 1 ? i - 3 : i - step, i);
+						i == size - 1 ? i - step + 1 : i - step, i);
 				break;
 			}
 			temp = ptr;
