@@ -20,7 +20,7 @@ int jump_search(int *array, size_t size, int value)
 	for (i = 0; ; i++)
 	{
 		m = step * i;
-		if (array[m] >= value || m >= new)
+		if (m >= new || array[m] >= value)
 		{
 			n = step * (i - 1);
 			n = n < 0 ? 0 : n;
